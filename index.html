@@ -1,36 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registro de Perro</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="form-container">
-        <h2>Registro de Mascota</h2>
-        <form action="/submit" method="post" enctype="multipart/form-data">
-            
-            <div class="form-group">
-                <label for="dog-name">Nombre del perro *</label>
-                <input type="text" id="dog-name" name="dog_name" placeholder="Ej: Max" required>
-            </div>
+      <h2>Registro de Mascota</h2>
+      <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="dog-name">Nombre del perro *</label>
+          <input
+            type="text"
+            id="dog-name"
+            name="dog_name"
+            placeholder="Ej: Max"
+            required
+          />
+        </div>
 
-            <div class="form-group">
-                <label for="dog-desc">Descripción del perro *</label>
-                <input type="text" id="dog-desc" name="dog_description" placeholder="Ej: Labrador juguetón de 2 años" required>
-            </div>
+        <div class="form-group">
+          <label for="dog-desc">Descripción del perro *</label>
+          <input
+            type="text"
+            id="dog-desc"
+            name="dog_description"
+            placeholder="Ej: Labrador juguetón de 2 años"
+            required
+          />
+        </div>
 
-            <div class="form-group">
-                <label for="dog-photo">Foto del perro *</label>
-                <input type="file" id="dog-photo" name="dog_photo" accept="image/*" required>
-            </div>
+        <div class="form-group">
+          <label for="dog-photo">Foto del perro *</label>
+          <input
+            type="file"
+            id="dog-photo"
+            name="dog_photo"
+            accept="image/*"
+            required
+          />
+        </div>
 
-            <button type="submit" class="submit-btn">Subir foto</button>
-            
-        </form>
+        <button type="button" class="submit-btn" onclick="upload()">
+          Subir foto
+        </button>
+      </form>
     </div>
-
-</body>
+    <script src="./script.js"></script>
+  </body>
 </html>

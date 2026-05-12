@@ -78,3 +78,15 @@ input[type="file"] {
 .submit-btn:hover {
     background-color: #357abd;
 }
+
+.toast {
+  width: 250px;
+  position: fixed;
+  border-radius: 8px;
+  padding: 10px 18px;
+  top: 10px;
+  right: 10px;
+  color: white;
+  background-color: #22c55e;
+  display: none;
+}
