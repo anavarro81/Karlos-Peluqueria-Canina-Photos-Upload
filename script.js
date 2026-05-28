@@ -23,19 +23,25 @@ const upload = async () => {
       body: formData,
     });
 
+    console.log("res ", res);
+
     if (res.ok) {
       showToash("Foto subida correctamente");
+    } else {
+      try {
+        const parsedError = await res.json();
+        console.log("parsedError", parsedError);
+        showToash(parsedError?.error || "Error al subir archivo", "error");
+      } catch (error) {
+        console.error("error al parsear el error ", error);
+      }
     }
-
-    
-
-    console.log("res ", res);
   } catch (error) {
     console.error("Error al subir la imagen ", error);
   }
 };
 
-const showToash = (message) => {
+const showToash = (message, type = "success") => {
   // const mainContainerEl = document.getElementById("main-container");
 
   const divToastEl = document.createElement("div");
@@ -43,6 +49,8 @@ const showToash = (message) => {
   divToastEl.innerText = message;
   divToastEl.style.display = "block";
   // mainContainerEl.appendChild(divToastEl);
+
+  divToastEl.classList.add(type == "success" ? "sucess-toast" : "error-toast");
   document.body.appendChild(divToastEl);
 
   setTimeout(() => {
